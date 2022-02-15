@@ -1,0 +1,79 @@
+#include <iostream>
+
+using namespace std;
+
+const int LNAME = 25;
+
+class STUDENT {
+
+private:
+	char name[LNAME];
+	int age;
+	float grade;
+public:
+	STUDENT() {
+		for (int i = 0; i <= 25; i++) {
+			name[i] = 0;
+		}
+		int age = 0;
+		float grade = 0;
+	}
+	char* GetName() {
+		return name;
+	};
+	int GetAge() const {
+		return age;
+	};
+	float GetGrade() const {
+		return grade;
+	};
+	void SetName(char* name) {
+		int i = 0;
+		while (*name != 0) {
+			this->name[i] = *name;
+			name++;
+			i++;
+		}
+	};
+	void SetAge(int age) {
+		this->age = age;
+	};
+	void SetGrade(float grade) {
+		this->grade = grade;
+	};
+	void Set(char* name, int age, float greade) {
+		int i = 0;
+		while (*name != 0) {
+			this->name[i] = *name;
+			name++;
+			i++;
+		}
+		this->grade = grade;
+		this->age = age;
+		
+	};
+	void Show() {
+		cout << "Имя студента - " <<name<<endl;
+		cout << "Возраст студента - " <<age<< endl;
+		cout << "Рейтинг студента - " <<grade<<endl;
+	};
+};
+int main() {
+	STUDENT student;
+	setlocale(LC_ALL, "russian");
+	char name[LNAME];
+	int age;
+	float grade;
+	cout << "Введите имя студента. Максимальное количество симовлов - 25";
+	cin >> name;
+	cout << "Введите возраст и рейтинг студента";
+	cin >> age >> grade;
+	student.SetName(name);
+	cout << student.GetName() << endl;
+	student.SetAge(age);
+	cout << student.GetAge() << endl;
+	student.SetGrade(grade);
+	cout << student.GetGrade() << endl;
+	student.Set(name,age,grade);
+	student.Show();
+}
