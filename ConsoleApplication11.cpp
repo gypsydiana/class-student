@@ -81,6 +81,6 @@ int main() {
 	cout << "Рейтинг студента - "<< student.GetGrade() << endl; 
 	student.Set(name,age,grade);
 	cout << endl;
-	cout << "Результат работы Set и SHow " << endl << endl;
+	cout << "Результат работы Set и Show " << endl << endl;
 	student.Show();
 }
